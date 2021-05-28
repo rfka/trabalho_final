@@ -1,7 +1,7 @@
 class Alvo:
     def __init__(self,dano,ataque):
-        self.__vidaInimigo=dano
-        self.ataque=ataque
+        self.__vidaInimigo = dano
+        self.ataque = ataque
         
 
     def dano(self,dano):
