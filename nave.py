@@ -1,24 +1,30 @@
+from random import randint
 class Nave:
-    def __init__(self, vida, comb, municao):
-        self.__vida = vida
-        self.__comb = comb
-        self.__municao = municao
+    def __init__(self, n, a, m): # nomejogador / armaes colhida / munição
+        self.nome = n
+        self.vida = 200
+        self.comb = 100
+        self.mun = m
+        self.arma = a 
+    def vidaa(self,dano):
+        self.vida -= dano
+        if self.vida <= 0:
+            self.vida = 0
+    def combustivel(self,g):
+        self.comb -= g
+    def municao(self, g):
+        self.mun -= g
+    def status(self):
+        print(f'Nome da nave ---- {self.nome}')
+        print(f'vida         ---- {self.vida}')
+        print(f'Combustível  ---- {self.comb}')
+        print(f'Arma         ---- {self.arma}')        
+class Darth:
+    def __init__(self):
+        self.life = 200
+        self.atk = randint(30,50)
 
-
-    def combustivel(self, comb):
-        if comb == "g10":
-            self.__comb -= 10
-            print(f"A sua nave comsumiu 10l de combustível! Voce possui {self.__comb}l!")
-        elif comb == "g30":
-            self.__comb -= 30
-            print(f"A sua nave comsumiu 30l de combustível! Voce possui {self.__comb}l!")
-        elif comb == "g40":
-            self.__com -= 40
-            print(f"A sua nave comsumiu 40l de combustível! Voce possui {self.__comb}l!")
-        
-
-    #def municao(self):
-
-
-    def vida(self, vida):
-        
+    def deLife(self, d):
+        self.life -= d
+        if self.life<0:
+            self.life=0
